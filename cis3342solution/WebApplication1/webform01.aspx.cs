@@ -11,8 +11,16 @@ namespace WebApplication1{
         }
 
         protected void Button1_Click(object sender, EventArgs e){
-            double input1 = Convert.ToDouble(txtInput1.Text);
-            double input2 = Convert.ToDouble(txtInput2.Text);
+            double input1, input2;
+            try{
+                input1 = Convert.ToDouble(txtInput1.Text);
+                input2 = Convert.ToDouble(txtInput2.Text);
+            }catch{
+                Response.Write("Please enter only numerical values!");
+                return;
+            }
+
+            
             string function = dropFunction.SelectedValue;
             Object output = null;
 
@@ -33,7 +41,6 @@ namespace WebApplication1{
             }else{
                 txtOutput.Text = Convert.ToString(output);
             }
-
         }
     }
 }

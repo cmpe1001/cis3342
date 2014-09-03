@@ -3,3 +3,8 @@ G:\cis3342\cis3342solution\WebApplication1\bin\WebApplication1.pdb
 G:\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.dll
 G:\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.pdb
 G:\cis3342\cis3342solution\WebApplication1\obj\Debug\lab01.csprojResolveAssemblyReference.cache
+Z:\cis3342\cis3342solution\WebApplication1\obj\Debug\lab01.csprojResolveAssemblyReference.cache
+Z:\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.dll
+Z:\cis3342\cis3342solution\WebApplication1\bin\WebApplication1.dll
+Z:\cis3342\cis3342solution\WebApplication1\bin\WebApplication1.pdb
+Z:\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.pdb
