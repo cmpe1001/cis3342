@@ -1,0 +1,5 @@
+G:\cis3342\cis3342solution\Utilities\bin\Debug\Utilities.dll
+G:\cis3342\cis3342solution\Utilities\bin\Debug\Utilities.pdb
+G:\cis3342\cis3342solution\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+G:\cis3342\cis3342solution\Utilities\obj\Debug\Utilities.dll
+G:\cis3342\cis3342solution\Utilities\obj\Debug\Utilities.pdb
