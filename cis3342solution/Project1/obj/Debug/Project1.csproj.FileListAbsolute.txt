@@ -5,3 +5,12 @@ G:\cis3342\cis3342solution\Project1\bin\Utilities.pdb
 G:\cis3342\cis3342solution\Project1\obj\Debug\Project1.csprojResolveAssemblyReference.cache
 G:\cis3342\cis3342solution\Project1\obj\Debug\Project1.dll
 G:\cis3342\cis3342solution\Project1\obj\Debug\Project1.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\bin\Project1.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\bin\Project1.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\bin\Utilities.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\bin\Utilities.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\obj\Debug\Project1.csprojResolveAssemblyReference.cache
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\obj\Debug\Project1.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\obj\Debug\Project1.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\bin\PizzaLibrary.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project1\bin\PizzaLibrary.pdb
