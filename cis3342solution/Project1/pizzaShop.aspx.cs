@@ -56,6 +56,7 @@ namespace Project1{
             double grandTotal = 0;
             foreach (Pizza pizza in pizzas){
                 grandTotal += pizza.getTotal();
+                PizzaMath.updateDB(pizza.PizzaType, pizza.Quantity, pizza.getTotal());
             }
 
             gvOutput.DataSource = pizzas;
@@ -63,6 +64,20 @@ namespace Project1{
             gvOutput.Columns[2].FooterText = counter.ToString();
             gvOutput.Columns[4].FooterText = grandTotal.ToString("C2");
             gvOutput.DataBind();
+
+            lblOutputName.Text = txtName.Text;
+            lblOutputAddress.Text = txtAddress.Text;
+            lblOutputPhone.Text = txtPhone.Text;
+        }
+
+        protected void btnGenerateReport(object sender, EventArgs e){
+            DBConnect database = new DBConnect();
+            string sql = "SELECT PizzaType, TotalSales, TotalQuantityOrdered FROM Pizzas ORDER BY 'TotalSales' DESC";
+            DataSet dataset = database.GetDataSet(sql);
+            database.CloseConnection();
+
+            gvReport.DataSource = dataset;
+            gvReport.DataBind();
         }
     }
 }

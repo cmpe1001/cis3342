@@ -9,7 +9,6 @@ namespace PizzaLibrary{
         string pizzaType;
         int size;
         double price;
-        double basePrice;
         string textSize;
         int quantity;
         double totalCost;
@@ -44,15 +43,9 @@ namespace PizzaLibrary{
             get { return quantity; }
         }
 
-//        public double getPrice(){ return price; }
-
         public string PizzaSize{
             get { return textSize; }
         }
-
-//        public string getPizzaTextSize() { return textSize; }
-
-//        public int getPizzaSize() { return size; }
 
         public double Total {
             get { return totalCost; }
