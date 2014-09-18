@@ -21,12 +21,18 @@ namespace Project1{
                 gvMenu.DataSource = dataset;
                 gvMenu.DataBind();
             }
+            ordering.Visible = true;
+            orderInfo.Visible = false;
+            managementReport.Visible = false;
         }
 
         protected void btnOrder_Click(object sender, EventArgs e){
+            ordering.Visible = false;
+            orderInfo.Visible = true;
+            managementReport.Visible = false;
+
             int counter = 0;
             List<Pizza> pizzas = new List<Pizza>();
-
             for (int i = 0; i < gvMenu.Rows.Count; i++){
                 CheckBox checkbox = (CheckBox)gvMenu.Rows[i].FindControl("cbBox");
                 TextBox txtQuantity = (TextBox)gvMenu.Rows[i].FindControl("txtQuantity");
@@ -39,15 +45,9 @@ namespace Project1{
                 int size = int.Parse(drpSize.SelectedValue);
                 int quantity = int.Parse(txtQuantity.Text);
 
-                if (checkbox.Checked && quantity == 0){
-                    quantity = 1;
+                if (checkbox.Checked && quantity != 0){
                     String type = gvMenu.Rows[i].Cells[1].Text;
                     Pizza pizza = new Pizza(size,type, quantity);
-                    pizzas.Add(pizza);
-                    counter = counter + quantity;
-                } else if (checkbox.Checked){
-                    String type = gvMenu.Rows[i].Cells[1].Text;
-                    Pizza pizza = new Pizza(size, type, quantity);
                     pizzas.Add(pizza);
                     counter = counter + quantity;
                 }
@@ -78,6 +78,25 @@ namespace Project1{
 
             gvReport.DataSource = dataset;
             gvReport.DataBind();
+
+            ordering.Visible = false;
+            orderInfo.Visible = false;
+            managementReport.Visible = true;
+        }
+
+        protected void btnGoHome(object sender, EventArgs e){
+            DBConnect database = new DBConnect();
+            string sql = "SELECT * FROM Pizzas";
+            DataSet dataset = database.GetDataSet(sql);
+            database.CloseConnection();
+
+            gvMenu.DataSource = dataset;
+            gvMenu.DataBind();
+
+            txtAddress.Text = "";
+            txtName.Text = "";
+            txtPhone.Text = "";
+            Page_Load(this, e);
         }
     }
 }

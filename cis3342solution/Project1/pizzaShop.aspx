@@ -5,17 +5,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Pizza Ordering</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form2" runat="server">
-        <div id="ordering">
+        <div id="navigation">
+            <asp:Button ID="btnReport" runat="server" Text="Management Report" OnClick="btnGenerateReport" />
+            &nbsp
+            <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnGoHome" />
+        </div>
+        <div runat="server" id="ordering">
             <div id="customerInfo">
                 <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label><br />
-                <asp:TextBox ID="txtName" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="txtName" runat="server" Text=""></asp:TextBox><br />
                 <asp:Label ID="lblAddress" runat="server" Text="Address:"></asp:Label><br />
-                <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="txtAddress" runat="server" Text=""></asp:TextBox><br />
                 <asp:Label ID="lblPhone" runat="server" Text="Phone Number:"></asp:Label><br />
-                <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="txtPhone" runat="server" Text=""></asp:TextBox><br />
                 <asp:Label ID="lblTransfer" runat="server" Text="Pickup/Delivery:"></asp:Label><br />
                 <asp:DropDownList ID="drpTransfer" runat="server">
                     <asp:ListItem Enabled="True" Value="delivery">Delivery</asp:ListItem>
@@ -50,7 +56,7 @@
                 <asp:Button ID="btnOrder" runat="server" Text="Place Order" OnClick="btnOrder_Click" /><br />
             </div>
         </div>
-        <div id="orderInfo">
+        <div runat="server" id="orderInfo">
             <div id="custInfo">
                 <asp:Label ID="lblOutputName" runat="server" Text=""></asp:Label><br />
                 <asp:Label ID="lblOutputAddress" runat="server" Text=""></asp:Label><br />
@@ -68,8 +74,7 @@
                 </asp:GridView><br />
             </div>
         </div>
-        <div id="managementReport">
-            <asp:Button ID="btnReport" runat="server" Text="Management Report" OnClick="btnGenerateReport" /><br />
+        <div runat="server" id="managementReport">
             <div id="reportGV">
                 <asp:GridView ID="gvReport" runat="server"></asp:GridView>
             </div>

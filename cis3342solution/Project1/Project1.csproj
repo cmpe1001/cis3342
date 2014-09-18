@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="OrderConfirmation.aspx" />
     <Content Include="pizzaShop.aspx" />
+    <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

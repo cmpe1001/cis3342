@@ -22,6 +22,33 @@ namespace Project1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
+        /// btnReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReport;
+        
+        /// <summary>
+        /// btnHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHome;
+        
+        /// <summary>
+        /// ordering control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ordering;
+        
+        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -112,6 +139,15 @@ namespace Project1 {
         protected global::System.Web.UI.WebControls.Button btnOrder;
         
         /// <summary>
+        /// orderInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl orderInfo;
+        
+        /// <summary>
         /// lblOutputName control.
         /// </summary>
         /// <remarks>
@@ -148,13 +184,13 @@ namespace Project1 {
         protected global::System.Web.UI.WebControls.GridView gvOutput;
         
         /// <summary>
-        /// btnReport control.
+        /// managementReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReport;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl managementReport;
         
         /// <summary>
         /// gvReport control.
