@@ -24,9 +24,35 @@ namespace Project1{
             ordering.Visible = true;
             orderInfo.Visible = false;
             managementReport.Visible = false;
+            lblOrderError.Visible = false;
+        }
+
+        protected bool inputValidation() {
+            bool output = true;
+            if (txtName.Text == ""){
+                lblErrorName.Visible = true;
+                output = false;
+            } else { lblErrorName.Visible = false; }
+
+            if (txtAddress.Text == ""){
+                lblErrorAddress.Visible = true;
+                output = false;
+            } else { lblErrorAddress.Visible = false; }
+
+            if (txtPhone.Text  == ""){
+                lblErrorPhone.Visible = true;
+                output = false;
+            } else { lblErrorPhone.Visible = false; }
+
+            return output;
         }
 
         protected void btnOrder_Click(object sender, EventArgs e){
+            if (!inputValidation()) {
+                Page_Load(this, e);
+                return;
+            }
+
             ordering.Visible = false;
             orderInfo.Visible = true;
             managementReport.Visible = false;
@@ -50,7 +76,19 @@ namespace Project1{
                     Pizza pizza = new Pizza(size,type, quantity);
                     pizzas.Add(pizza);
                     counter = counter + quantity;
+                } else if (checkbox.Checked && quantity == 0) {
+                    Page_Load(this, e);
+                    lblOrderError.Text = "You selected a pizza but not a quantity!";
+                    lblOrderError.Visible = true;
+                    return;
                 }
+            }
+
+            if (counter < 1) {
+                lblOrderError.Text = "You didn't order any pizzas!";
+                Page_Load(this, e);
+                lblOrderError.Visible = true;
+                return;
             }
 
             double grandTotal = 0;

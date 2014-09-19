@@ -8,7 +8,9 @@
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form id="form2" runat="server">
+    <div id="content">
+        <div id="header"><h1>Tom's Pizza</h1></div>
+        <form id="form2" runat="server">
         <div id="navigation">
             <asp:Button ID="btnReport" runat="server" Text="Management Report" OnClick="btnGenerateReport" />
             &nbsp
@@ -17,11 +19,11 @@
         <div runat="server" id="ordering">
             <div id="customerInfo">
                 <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label><br />
-                <asp:TextBox ID="txtName" runat="server" Text=""></asp:TextBox><br />
+                <asp:TextBox ID="txtName" runat="server" Text=""></asp:TextBox><asp:Label ID="lblErrorName" runat="server" Text="Please enter your name" Visible="false"></asp:Label><br />
                 <asp:Label ID="lblAddress" runat="server" Text="Address:"></asp:Label><br />
-                <asp:TextBox ID="txtAddress" runat="server" Text=""></asp:TextBox><br />
+                <asp:TextBox ID="txtAddress" runat="server" Text=""></asp:TextBox><asp:Label ID="lblErrorAddress" runat="server" Text="Please enter your address" Visible="false"></asp:Label><br />
                 <asp:Label ID="lblPhone" runat="server" Text="Phone Number:"></asp:Label><br />
-                <asp:TextBox ID="txtPhone" runat="server" Text=""></asp:TextBox><br />
+                <asp:TextBox ID="txtPhone" runat="server" Text=""></asp:TextBox><asp:Label ID="lblErrorPhone" runat="server" Text="Please enter your phone number" Visible="false"></asp:Label><br />
                 <asp:Label ID="lblTransfer" runat="server" Text="Pickup/Delivery:"></asp:Label><br />
                 <asp:DropDownList ID="drpTransfer" runat="server">
                     <asp:ListItem Enabled="True" Value="delivery">Delivery</asp:ListItem>
@@ -53,10 +55,12 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView><br />
+                <asp:Label ID="lblOrderError" runat="server"></asp:Label><br />
                 <asp:Button ID="btnOrder" runat="server" Text="Place Order" OnClick="btnOrder_Click" /><br />
             </div>
         </div>
         <div runat="server" id="orderInfo">
+            <h1>Order Confirmation</h1>
             <div id="custInfo">
                 <asp:Label ID="lblOutputName" runat="server" Text=""></asp:Label><br />
                 <asp:Label ID="lblOutputAddress" runat="server" Text=""></asp:Label><br />
@@ -79,6 +83,7 @@
                 <asp:GridView ID="gvReport" runat="server"></asp:GridView>
             </div>
         </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,18 +1,45 @@
 ﻿body {
 }
 
+#content {
+    width: 100%;
+}
+
+#header {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#customerInfo {
+    float:left;
+}
+
+#menu {
+    float: right;
+}
+
 #orderInfo {
-    background-color: #f00;
+    text-align: center;
+}
+
+#custInfo {
+    float:left;
+}
+
+#order {
+    float:right;
 }
 
 #ordering {
-    background-color: #00ff21;
+    height:auto;
 }
 
 #managementReport {
-    background-color: #ea2ecf;
+}
+
+#reportGV {
+    margin: 0 auto 0 auto;
 }
 
 #navigation {
-    background-color: #0ff;
 }
