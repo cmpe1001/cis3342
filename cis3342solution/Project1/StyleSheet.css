@@ -50,9 +50,8 @@
 
 #orderButton {
     text-align: center;
-    width: 50%;
-    margin: 0 auto;
-    clear: both;
+    width: 100%;
+    margin: auto;
 }
 
 #ordering {

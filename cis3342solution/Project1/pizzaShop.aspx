@@ -55,7 +55,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                </asp:GridView><br />
+                </asp:GridView>
             </div>
             <div id="orderButton">
                 <asp:Label ID="lblOrderError" runat="server"></asp:Label><br />
@@ -68,6 +68,7 @@
                 <asp:Label ID="lblOutputName" runat="server" Text=""></asp:Label><br />
                 <asp:Label ID="lblOutputAddress" runat="server" Text=""></asp:Label><br />
                 <asp:Label ID="lblOutputPhone" runat="server" Text=""></asp:Label><br />
+                <asp:Label ID="lblAcquisition" runat="server" Text=""></asp:Label><br />
             </div>
            <div id="order">
                 <asp:GridView ID="gvOutput" runat="server" AutoGenerateColumns="False" ShowFooter="True">
@@ -78,7 +79,7 @@
                         <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:c}" />
                         <asp:BoundField DataField="Total" HeaderText="Total Cost" DataFormatString="{0:c}" />
                     </Columns>
-                </asp:GridView><br />
+                </asp:GridView>
             </div>
         </div>
         <div runat="server" id="managementReport">

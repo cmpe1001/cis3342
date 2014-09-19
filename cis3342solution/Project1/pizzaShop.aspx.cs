@@ -63,13 +63,18 @@ namespace Project1{
                 CheckBox checkbox = (CheckBox)gvMenu.Rows[i].FindControl("cbBox");
                 TextBox txtQuantity = (TextBox)gvMenu.Rows[i].FindControl("txtQuantity");
                 DropDownList drpSize = (DropDownList)gvMenu.Rows[i].FindControl("drpSize");
-                
+
+                int quantity = 0;
                 if (txtQuantity.Text == ""){
                     txtQuantity.Text = "0";
+                } else if (int.TryParse(txtQuantity.Text, out quantity)) {
+                    Page_Load(this, e);
+                    lblOrderError.Text = "Invalid pizza quantity!";
+                    lblOrderError.Visible = true;
+                    return;
                 }
 
                 int size = int.Parse(drpSize.SelectedValue);
-                int quantity = int.Parse(txtQuantity.Text);
 
                 if (checkbox.Checked && quantity != 0){
                     String type = gvMenu.Rows[i].Cells[1].Text;
@@ -106,6 +111,7 @@ namespace Project1{
             lblOutputName.Text = txtName.Text;
             lblOutputAddress.Text = txtAddress.Text;
             lblOutputPhone.Text = txtPhone.Text;
+            lblAcquisition.Text = drpTransfer.SelectedValue;
         }
 
         protected void btnGenerateReport(object sender, EventArgs e){
