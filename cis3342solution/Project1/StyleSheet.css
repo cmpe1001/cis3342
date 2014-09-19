@@ -23,6 +23,7 @@
 
 #customerInfo {
     float:left;
+    text-align: left;
 }
 
 #menu {
@@ -39,6 +40,7 @@
 #custInfo {
     float:left;
     margin-left: 10px;
+    text-align: left;
 }
 
 #order {
@@ -57,6 +59,7 @@
     height:auto;
     clear: both;
     margin-left: 10px;
+    text-align: center;
 }
 
 #managementReport {

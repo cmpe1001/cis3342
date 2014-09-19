@@ -17,6 +17,7 @@
             <asp:Button ID="btnHome" runat="server" Text="Home" OnClick="btnGoHome" />
         </div>
         <div runat="server" id="ordering">
+            <h1>Order</h1>
             <div id="customerInfo">
                 <asp:Label ID="lblName" runat="server" Text="Name:"></asp:Label><br />
                 <asp:TextBox ID="txtName" runat="server" Text=""></asp:TextBox><asp:Label ID="lblErrorName" runat="server" Text="Please enter your name" Visible="false"></asp:Label><br />
