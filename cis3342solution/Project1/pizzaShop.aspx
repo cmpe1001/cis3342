@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="content">
-        <div id="header"><h1>Tom's Pizza</h1></div>
+        <div id="header">Tom's Pizza</div>
         <form id="form2" runat="server">
         <div id="navigation">
             <asp:Button ID="btnReport" runat="server" Text="Management Report" OnClick="btnGenerateReport" />
@@ -55,6 +55,8 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView><br />
+            </div>
+            <div id="orderButton">
                 <asp:Label ID="lblOrderError" runat="server"></asp:Label><br />
                 <asp:Button ID="btnOrder" runat="server" Text="Place Order" OnClick="btnOrder_Click" /><br />
             </div>
@@ -65,20 +67,21 @@
                 <asp:Label ID="lblOutputName" runat="server" Text=""></asp:Label><br />
                 <asp:Label ID="lblOutputAddress" runat="server" Text=""></asp:Label><br />
                 <asp:Label ID="lblOutputPhone" runat="server" Text=""></asp:Label><br />
-            </div><br />
+            </div>
            <div id="order">
-                <asp:GridView ID="gvOutput" runat="server" AutoGenerateColumns="false" ShowFooter="true">
+                <asp:GridView ID="gvOutput" runat="server" AutoGenerateColumns="False" ShowFooter="True">
                     <Columns>
                         <asp:BoundField DataField="PizzaType" HeaderText="PizzaType" />
                         <asp:BoundField DataField="PizzaSize" HeaderText="Size"  />
                         <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
-                        <asp:BoundField DataField="Price" HeaderText="Price" />
-                        <asp:BoundField DataField="Total" HeaderText="Total Cost" />
+                        <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:c}" />
+                        <asp:BoundField DataField="Total" HeaderText="Total Cost" DataFormatString="{0:c}" />
                     </Columns>
                 </asp:GridView><br />
             </div>
         </div>
         <div runat="server" id="managementReport">
+            <h1>Management Report</h1>
             <div id="reportGV">
                 <asp:GridView ID="gvReport" runat="server"></asp:GridView>
             </div>
