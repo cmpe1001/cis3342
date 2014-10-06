@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Utilities{
     public class DBConnect{
-//        String SqlConnectString = "server=localhost,5555;Database=fa14_3342_tuf01657;User id=tuf01657;Password=Zu5weega";
+//        String SqlConnectString = "server=localhost:5555;Database=fa14_3342_tuf01657;User id=tuf01657;Password=Zu5weega";
         String SqlConnectString = "server=cis-mssql1.temple.edu;Database=fa14_3342_tuf01657;User id=tuf01657;Password=Zu5weega";
         SqlConnection myConnectionSql;
         SqlCommand objCmd;

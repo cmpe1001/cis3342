@@ -8,3 +8,8 @@ Z:\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.dll
 Z:\cis3342\cis3342solution\WebApplication1\bin\WebApplication1.dll
 Z:\cis3342\cis3342solution\WebApplication1\bin\WebApplication1.pdb
 Z:\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\WebApplication1\bin\WebApplication1.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\WebApplication1\bin\WebApplication1.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\WebApplication1\obj\Debug\lab01.csprojResolveAssemblyReference.cache
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\WebApplication1\obj\Debug\WebApplication1.pdb

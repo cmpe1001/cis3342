@@ -1,0 +1,9 @@
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\bin\Project2.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\bin\Project2.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\bin\CourseRegistrationLibrary.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\bin\Utilities.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\bin\CourseRegistrationLibrary.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\bin\Utilities.pdb
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\obj\Debug\Project2.csprojResolveAssemblyReference.cache
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\obj\Debug\Project2.dll
+C:\Users\tbell\Documents\git\cis3342\cis3342solution\Project2\obj\Debug\Project2.pdb
