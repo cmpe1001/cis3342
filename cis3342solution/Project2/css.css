@@ -1,0 +1,31 @@
+﻿body {
+}
+
+#page_name {
+    width: 100%;
+    text-align: center;
+    font-family: Calibri;
+    font-size: 30px;
+}
+
+#navigation {
+    width: 100%;
+    font-size: 25px;
+    min-width: 600px;
+}
+
+.button {
+    text-align: center;
+    width: 24%;
+    min-height: 70px;
+    float: left;
+    background-color: gray;
+    font-family: Calibri;
+}
+
+.button_spacer {
+    float: left;
+    width: 1%;
+    min-height:50px;
+    height: 100%;
+}

@@ -1,0 +1,79 @@
+﻿body {
+    font-family:Arial;
+    background-color: lightgray;
+}
+
+#content {
+    width: 800px;
+    margin: auto;
+    background-color: white;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+#header {
+    text-align: center;
+    font-size: 70px;
+    background-color: gray;
+    border-radius: 50px;
+    color: white;
+    text-shadow: -1px 1px 0 #CFC;
+}
+
+#customerInfo {
+    float:left;
+    text-align: left;
+}
+
+#menu {
+    float: right;
+    margin-right: 10px;
+}
+
+#orderInfo {
+    text-align: center;
+    clear: both;
+
+}
+
+#custInfo {
+    float:left;
+    margin-left: 10px;
+    text-align: left;
+}
+
+#order {
+    float:right;
+    margin-right: 10px;
+}
+
+#orderButton {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+#ordering {
+    height:auto;
+    clear: both;
+    margin-left: 10px;
+    text-align: center;
+}
+
+#managementReport {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    clear: both;
+}
+
+#reportGV {
+    text-align: left;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#navigation {
+    text-align: center;
+}
