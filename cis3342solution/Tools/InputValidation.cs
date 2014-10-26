@@ -26,5 +26,15 @@ namespace Tools {
                 return false;
             }
         }
+
+        public static bool checkDecimals(string input){
+            int count = Regex.Matches(input, @"[0-9\.]").Count;
+
+            if (input.Length != 0 && count == input.Length) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 }

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C8F9254C-36DD-4EED-A205-8D94BFEBD87D}</ProjectGuid>
+    <ProjectGuid>{9C51DA0F-8B64-47E4-8A9F-252879574A2C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Project2</RootNamespace>
-    <AssemblyName>Project2</AssemblyName>
+    <RootNamespace>Project3</RootNamespace>
+    <AssemblyName>Project3</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,51 +57,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css.css" />
-    <Content Include="edit_course.aspx" />
-    <Content Include="edit_student.aspx" />
-    <Content Include="manage_courses.aspx" />
-    <Content Include="manage_departments.aspx" />
-    <Content Include="manage_students.aspx" />
+    <Content Include="MLS_API.asmx" />
     <Content Include="navigation.ascx" />
-    <Content Include="registration.aspx" />
+    <Content Include="realtor_management.aspx" />
+    <Content Include="stylesheet.css" />
     <Content Include="Web.config" />
+    <Content Include="home_management.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="edit_course.aspx.cs">
-      <DependentUpon>edit_course.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="edit_course.aspx.designer.cs">
-      <DependentUpon>edit_course.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="edit_student.aspx.cs">
-      <DependentUpon>edit_student.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="edit_student.aspx.designer.cs">
-      <DependentUpon>edit_student.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manage_courses.aspx.cs">
-      <DependentUpon>manage_courses.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="manage_courses.aspx.designer.cs">
-      <DependentUpon>manage_courses.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manage_departments.aspx.cs">
-      <DependentUpon>manage_departments.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="manage_departments.aspx.designer.cs">
-      <DependentUpon>manage_departments.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manage_students.aspx.cs">
-      <DependentUpon>manage_students.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="manage_students.aspx.designer.cs">
-      <DependentUpon>manage_students.aspx</DependentUpon>
+    <Compile Include="MLS_API.asmx.cs">
+      <DependentUpon>MLS_API.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="navigation.ascx.cs">
       <DependentUpon>navigation.ascx</DependentUpon>
@@ -110,17 +76,23 @@
     <Compile Include="navigation.ascx.designer.cs">
       <DependentUpon>navigation.ascx</DependentUpon>
     </Compile>
-    <Compile Include="registration.aspx.cs">
-      <DependentUpon>registration.aspx</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="home_management.aspx.cs">
+      <DependentUpon>home_management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="registration.aspx.designer.cs">
-      <DependentUpon>registration.aspx</DependentUpon>
+    <Compile Include="home_management.aspx.designer.cs">
+      <DependentUpon>home_management.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="realtor_management.aspx.cs">
+      <DependentUpon>realtor_management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="realtor_management.aspx.designer.cs">
+      <DependentUpon>realtor_management.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -129,13 +101,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CourseRegistrationLibrary\CourseRegistrationLibrary.csproj">
-      <Project>{fd2b3deb-c94c-4ff2-88f6-48d039d235f9}</Project>
-      <Name>CourseRegistrationLibrary</Name>
+    <ProjectReference Include="..\MLSLib\MLSLib.csproj">
+      <Project>{21072367-bcd8-4e93-ba83-91d70c6bbd0e}</Project>
+      <Name>MLSLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{661aea78-b1a0-4a02-998c-563d493456b4}</Project>
       <Name>Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{6ed444cf-ac93-4f84-941e-a7fade860c14}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -151,9 +127,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51208</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49180/</IISUrl>
+          <IISUrl>http://localhost:49541/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
