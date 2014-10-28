@@ -119,6 +119,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,10 +140,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:49486/MLS_API.asmx">
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/MLS_API.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\svcMLS\</RelPath>
-      <UpdateFromURL>http://localhost:49486/MLS_API.asmx</UpdateFromURL>
+      <UpdateFromURL>http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/MLS_API.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
