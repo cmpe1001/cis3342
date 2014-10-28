@@ -8,6 +8,8 @@ using System.Data;
 
 namespace Project3{
     public partial class realtor_management : System.Web.UI.Page {
+        svcMLS.MLS_API MLS_API = new svcMLS.MLS_API();
+
         protected void Page_Load(object sender, EventArgs e) {
             if(!IsPostBack){
                 getRealtors();

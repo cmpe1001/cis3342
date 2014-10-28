@@ -33,9 +33,9 @@ namespace MLSLib{
             return DBAccess.DBUpdate(sql);
         }
 
-        public static bool createViewings(List<List<object>> homesAndDates, int clientID){
+        public static bool createViewings(object[] homesAndDates, int clientID){
             bool output = false;
-            foreach(List<object> homeAndDate in homesAndDates){
+            foreach(object[] homeAndDate in homesAndDates){
                 int homeID = int.Parse(homeAndDate[0].ToString());
                 DateTime date = DateTime.Parse(homeAndDate[1].ToString());
                 int realtorID = Home.getRealtor(homeID);

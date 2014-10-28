@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/">
+      <s:element name="searchHomes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxPrice" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="sqft" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="availability" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedrooms" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bathrooms" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchHomesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchHomesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="homeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHomeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteHome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="homeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteHomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteHomeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyHome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="listPrice" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="sqft" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="availability" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedrooms" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bathrooms" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="realtorID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="homeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyHomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="modifyHomeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createHome">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="listPrice" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="sqft" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="availability" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedrooms" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bathrooms" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="realtorID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createHomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createHomeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createViewings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="homesAndDates" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="createViewingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createViewingsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteViewing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="hsrID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteViewingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteViewingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRealtors">
+        <s:complexType />
+      </s:element>
+      <s:element name="getRealtorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRealtorsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="showListings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="realtorID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="showListingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="showListingsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClients">
+        <s:complexType />
+      </s:element>
+      <s:element name="getClientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClientsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="createClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="searchHomesSoapIn">
+    <wsdl:part name="parameters" element="tns:searchHomes" />
+  </wsdl:message>
+  <wsdl:message name="searchHomesSoapOut">
+    <wsdl:part name="parameters" element="tns:searchHomesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHomeSoapIn">
+    <wsdl:part name="parameters" element="tns:getHome" />
+  </wsdl:message>
+  <wsdl:message name="getHomeSoapOut">
+    <wsdl:part name="parameters" element="tns:getHomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteHomeSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteHome" />
+  </wsdl:message>
+  <wsdl:message name="deleteHomeSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteHomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyHomeSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyHome" />
+  </wsdl:message>
+  <wsdl:message name="modifyHomeSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyHomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="createHomeSoapIn">
+    <wsdl:part name="parameters" element="tns:createHome" />
+  </wsdl:message>
+  <wsdl:message name="createHomeSoapOut">
+    <wsdl:part name="parameters" element="tns:createHomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="createViewingsSoapIn">
+    <wsdl:part name="parameters" element="tns:createViewings" />
+  </wsdl:message>
+  <wsdl:message name="createViewingsSoapOut">
+    <wsdl:part name="parameters" element="tns:createViewingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteViewingSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteViewing" />
+  </wsdl:message>
+  <wsdl:message name="deleteViewingSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteViewingResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRealtorsSoapIn">
+    <wsdl:part name="parameters" element="tns:getRealtors" />
+  </wsdl:message>
+  <wsdl:message name="getRealtorsSoapOut">
+    <wsdl:part name="parameters" element="tns:getRealtorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="showListingsSoapIn">
+    <wsdl:part name="parameters" element="tns:showListings" />
+  </wsdl:message>
+  <wsdl:message name="showListingsSoapOut">
+    <wsdl:part name="parameters" element="tns:showListingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:getClients" />
+  </wsdl:message>
+  <wsdl:message name="getClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createClientSoapIn">
+    <wsdl:part name="parameters" element="tns:createClient" />
+  </wsdl:message>
+  <wsdl:message name="createClientSoapOut">
+    <wsdl:part name="parameters" element="tns:createClientResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MLS_APISoap">
+    <wsdl:operation name="searchHomes">
+      <wsdl:input message="tns:searchHomesSoapIn" />
+      <wsdl:output message="tns:searchHomesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHome">
+      <wsdl:input message="tns:getHomeSoapIn" />
+      <wsdl:output message="tns:getHomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteHome">
+      <wsdl:input message="tns:deleteHomeSoapIn" />
+      <wsdl:output message="tns:deleteHomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyHome">
+      <wsdl:input message="tns:modifyHomeSoapIn" />
+      <wsdl:output message="tns:modifyHomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createHome">
+      <wsdl:input message="tns:createHomeSoapIn" />
+      <wsdl:output message="tns:createHomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createViewings">
+      <wsdl:input message="tns:createViewingsSoapIn" />
+      <wsdl:output message="tns:createViewingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteViewing">
+      <wsdl:input message="tns:deleteViewingSoapIn" />
+      <wsdl:output message="tns:deleteViewingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRealtors">
+      <wsdl:input message="tns:getRealtorsSoapIn" />
+      <wsdl:output message="tns:getRealtorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="showListings">
+      <wsdl:input message="tns:showListingsSoapIn" />
+      <wsdl:output message="tns:showListingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <wsdl:input message="tns:getClientsSoapIn" />
+      <wsdl:output message="tns:getClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <wsdl:input message="tns:createClientSoapIn" />
+      <wsdl:output message="tns:createClientSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MLS_APISoap" type="tns:MLS_APISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="searchHomes">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/searchHomes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHome">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/getHome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHome">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/deleteHome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyHome">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/modifyHome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createHome">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/createHome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createViewings">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/createViewings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteViewing">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/deleteViewing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRealtors">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/getRealtors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showListings">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/showListings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/getClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <soap:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/createClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MLS_APISoap12" type="tns:MLS_APISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="searchHomes">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/searchHomes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHome">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/getHome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHome">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/deleteHome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyHome">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/modifyHome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createHome">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/createHome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createViewings">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/createViewings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteViewing">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/deleteViewing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRealtors">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/getRealtors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showListings">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/showListings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/getClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <soap12:operation soapAction="http://cis-iis2.temple.edu/Fall2014/cis3342_tuf01657/Project3WS/createClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MLS_API">
+    <wsdl:port name="MLS_APISoap" binding="tns:MLS_APISoap">
+      <soap:address location="http://localhost:49486/MLS_API.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MLS_APISoap12" binding="tns:MLS_APISoap12">
+      <soap12:address location="http://localhost:49486/MLS_API.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

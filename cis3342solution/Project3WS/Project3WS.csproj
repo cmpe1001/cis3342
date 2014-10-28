@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9C51DA0F-8B64-47E4-8A9F-252879574A2C}</ProjectGuid>
+    <ProjectGuid>{17840037-8FB9-431B-83A7-1F2FF4376F2E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Project3</RootNamespace>
-    <AssemblyName>Project3</AssemblyName>
+    <RootNamespace>Project3WS</RootNamespace>
+    <AssemblyName>Project3WS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -39,8 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -59,66 +57,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="clientManagement.aspx" />
-    <Content Include="navigation.ascx" />
-    <Content Include="realtor_management.aspx" />
-    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
-    <Content Include="stylesheet.css" />
-    <Content Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </Content>
-    <Content Include="Web References\svcMLS\MLS_API.disco" />
+    <Content Include="MLS_API.asmx" />
     <Content Include="Web.config" />
-    <Content Include="home_management.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clientManagement.aspx.cs">
-      <DependentUpon>clientManagement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="clientManagement.aspx.designer.cs">
-      <DependentUpon>clientManagement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="navigation.ascx.cs">
-      <DependentUpon>navigation.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="navigation.ascx.designer.cs">
-      <DependentUpon>navigation.ascx</DependentUpon>
+    <Compile Include="MLS_API.asmx.cs">
+      <DependentUpon>MLS_API.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="home_management.aspx.cs">
-      <DependentUpon>home_management.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="home_management.aspx.designer.cs">
-      <DependentUpon>home_management.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="realtor_management.aspx.cs">
-      <DependentUpon>realtor_management.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="realtor_management.aspx.designer.cs">
-      <DependentUpon>realtor_management.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\svcMLS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web References\svcMLS\MLS_API.wsdl" />
-    <Content Include="Web References\svcMLS\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,29 +77,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tools\Tools.csproj">
-      <Project>{661aea78-b1a0-4a02-998c-563d493456b4}</Project>
-      <Name>Tools</Name>
+    <ProjectReference Include="..\MLSLib\MLSLib.csproj">
+      <Project>{21072367-bcd8-4e93-ba83-91d70c6bbd0e}</Project>
+      <Name>MLSLib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:49486/MLS_API.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\svcMLS\</RelPath>
-      <UpdateFromURL>http://localhost:49486/MLS_API.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Project3_svcMLS_MLS_API</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -166,7 +97,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49541/</IISUrl>
+          <IISUrl>http://localhost:49284/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -9,6 +9,8 @@ using Tools;
 
 namespace Project3 {
     public partial class WebForm1 : System.Web.UI.Page {
+        svcMLS.MLS_API MLS_API = new svcMLS.MLS_API();
+
         protected void Page_Load(object sender, EventArgs e) {
         }
 
@@ -21,6 +23,8 @@ namespace Project3 {
             txtHomeID.Enabled=false;
             errorField.Visible=false;
             searchResults.Visible=false;
+            lblRealtor.Visible=true;
+            ddlRealtors.Visible=true;
         }
 
         protected void btnModify_Click(object sender, EventArgs e) {
@@ -229,9 +233,10 @@ namespace Project3 {
         protected void btnSchedule_Click(object sender, EventArgs e){
             string errorString = "";
             int clientID = int.Parse(ddlClients.SelectedValue);
-            List<List<object>> homesAndDates = new List<List<object>>();
+            object[] homesAndDates = new object[gvSearchResults.Rows.Count];
 
-            foreach(GridViewRow row in gvSearchResults.Rows){
+            for(int i=0;i<gvSearchResults.Rows.Count;i++){
+                GridViewRow row = gvSearchResults.Rows[i];
                 CheckBox checkbox = (CheckBox)row.FindControl("chkScheduleViewing");
                 DropDownList ddlHour = (DropDownList)row.FindControl("ddlHour");
                 DropDownList ddlMinute = (DropDownList)row.FindControl("ddlMinute");
@@ -253,10 +258,10 @@ namespace Project3 {
                     if(!DateTime.TryParse(datetime, out dateTime)){
                         errorString += "Invalid Date:" + datetime + "  ";
                     }else{
-                        List<object> homeAndDate = new List<object>();
-                        homeAndDate.Add(homeID);
-                        homeAndDate.Add(dateTime);
-                        homesAndDates.Add(homeAndDate);
+                        object[] homeAndDate = new object[2];
+                        homeAndDate[0]=homeID;
+                        homeAndDate[1]=dateTime;
+                        homesAndDates[i]=homeAndDate;
                     }
                 }
             }
